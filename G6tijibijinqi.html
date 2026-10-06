@@ -5,43 +5,50 @@
 <title>G6 球体积薄片逼近器</title>
 <style>
   body { margin: 0; overflow: hidden; font-family: "Microsoft YaHei", sans-serif; }
+
   #info {
-    position: absolute; top: 20px; left: 20px;
-    color: white; background: rgba(0,0,0,0.75);
-    padding: 15px 20px; border-radius: 8px;
-    font-size: 15px; line-height: 1.9;
+    position: absolute; top: 8px; left: 8px;
+    color: white; background: rgba(0,0,0,0.72);
+    padding: 6px 10px; border-radius: 6px;
+    font-size: 11px; line-height: 1.5;
+    pointer-events: none;
   }
-  #info strong { color: #66ccff; font-size: 17px; }
+  #info strong { color: #66ccff; font-size: 12px; }
   .val { color: #ffcc00; font-weight: bold; }
   .err { color: #ff6666; font-weight: bold; }
-  #controls {
-    position: absolute; bottom: 30px; left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.8);
-    padding: 18px 28px; border-radius: 10px;
-    display: flex; flex-direction: column; gap: 12px;
-    align-items: center; min-width: 500px;
+
+  #hint {
+    position: absolute; top: 8px; right: 8px;
+    color: #aaccff; background: rgba(0,0,0,0.62);
+    padding: 5px 9px; border-radius: 6px;
+    font-size: 10px; line-height: 1.45; max-width: 160px;
+    pointer-events: none;
   }
-  #sliderRow { display: flex; align-items: center; gap: 15px; width: 100%; }
-  #sliderRow label { color: white; font-size: 16px; }
-  input[type=range] { flex: 1; height: 8px; cursor: pointer; }
-  #nValue { color: #ffcc00; font-weight: bold; font-size: 20px; min-width: 50px; text-align: right; }
-  #btnRow { display: flex; gap: 12px; }
+
+  #controls {
+    position: absolute; bottom: 8px; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    padding: 8px 12px; border-radius: 8px;
+    display: flex; flex-direction: column; gap: 6px;
+    align-items: center;
+    max-width: calc(100vw - 20px);
+  }
+  #sliderRow { display: flex; align-items: center; gap: 8px; width: 100%; }
+  #sliderRow label { color: white; font-size: 11px; white-space: nowrap; }
+  input[type=range] { flex: 1; height: 4px; cursor: pointer; min-width: 160px; }
+  #nValue { color: #ffcc00; font-weight: bold; font-size: 12px; min-width: 30px; text-align: right; }
+  #btnRow { display: flex; gap: 5px; }
   button {
-    padding: 10px 22px; font-size: 15px;
-    border: none; border-radius: 6px;
+    padding: 3px 10px; font-size: 11px;
+    border: none; border-radius: 4px;
     cursor: pointer; background: #4488ff;
     color: white; font-weight: bold;
+    font-family: inherit;
   }
   button:hover { background: #3366cc; }
   #recordBtn { background: #22aa66; }
   #recordBtn:hover { background: #118855; }
-  #hint {
-    position: absolute; top: 20px; right: 20px;
-    color: #aaccff; background: rgba(0,0,0,0.7);
-    padding: 12px 18px; border-radius: 8px;
-    font-size: 14px; line-height: 1.7; max-width: 260px;
-  }
 </style>
 </head>
 <body>
