@@ -211,10 +211,9 @@ nSlider.addEventListener('input', (e) => {
     const approx = updateSlices(n);
     const relErr = Math.abs(approx - V_EXACT) / V_EXACT * 100;
 
-    /* 把这句话发给智能体 A1 的输入框 */
+    /* 请把这句话的粘贴进输入框 */
     const agentPrompt =
-      `学生已将薄片数调至 ${n}，误差 ${relErr.toFixed(2)}%。` +
-      `请追问：误差会变成 0 吗？"变成 0"与"可以任意小"是一回事吗？`;
+      `学生已将薄片数调至 ${n}，误差 ${relErr.toFixed(2)}%。`;
 
     /* 复制到剪贴板，方便学生直接粘贴给智能体 */
     copyToClipboard(agentPrompt);
